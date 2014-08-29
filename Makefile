@@ -5,6 +5,9 @@ REVISION = $(shell git log --pretty=format:'%h' -n 1)
 .dist-dir:
 	mkdir -p $(DISTDIR)
 
+cp:
+	cp -R ./* /var/www/html
+
 package: .dist-dir
 	fpm -s dir \
 		-t rpm \
